@@ -55,12 +55,17 @@ header{
 
 .logo{
     display: flex;
+} 
+    
+.logo-container >.logo > h1 {
+    margin-left:20px;
 }
+
 .logo-da{
     height: 4vh;
 }
 .logo > h1{
-    color: var(--white-color);
+    color: var(--Grey);
 }
 
 .links{
@@ -70,7 +75,7 @@ header{
     list-style-type: none;
 }
 .a-links{
-    text-decoration: none;
+    text-decoration:none;
     color: var(--white-color);
     margin: 0.5vw;
 }
@@ -82,6 +87,7 @@ header{
     margin-right: 3vw;
 }
 .contributor-container > h3{
+     text-decoration:underline;
     color: var(--white-color);
 }
 
@@ -89,7 +95,7 @@ header{
 #landing{
     width: 100vw;
     height: 100vh;
-    background-color: blue;
+    background-color:blue;
     background-image: url(img/gradient-ai-cloud-with-broken-pieces.jpg);
     background-size: cover;
     background-attachment: scroll;
@@ -100,7 +106,7 @@ header{
 }
 #landing > h5{
     background-color:rgba(0, 0, 0, 0.6);
-    animation: float 5s infinite ease-in-out;
+
 }
 .Prompt-container{
     display: flex;
@@ -108,14 +114,19 @@ header{
     align-items: center;
     justify-content: center;
 }
-input,button{
-    border-radius: 5px;
-    width: 50vw;
-    height: 10vh;
-    margin: 2vh;
-}
+input,
+
 button{
-    background-color: rgb(224, 221, 0);
+    border-radius: 5px;
+    width: 30vw;
+    height: 5vh;
+    margin: 2vh;
+    border:none;
+    
+}
+
+button{
+    background-color: rgb(83, 83, 79);
     font-size: 1.5em;
     cursor: pointer;
     border: none;
