@@ -1,0 +1,124 @@
+*{
+    font-family: 'Poppins','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*          CSS variables                                     */
+:root{
+    --white-color: rgb(255, 255, 255);
+}
+
+/*          Fuc***g Animations                           */
+@keyframes in-animation{
+    from{
+        transform: scale(80%);
+    }
+    to{
+        transform: scale(100%);
+    }
+}
+
+@keyframes float{
+    0%,60%,100%{
+        transform: translateY(0px);
+        transform: scale(90%);
+    }
+    25%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(15px);
+    }
+    75%{
+        transform: translateY(10px);
+    }
+    90%{
+        transform: translateY(5px);
+    }
+}
+/*          Top Header Elements are created here         */
+header{
+    /* background-color:rgba(10, 59, 165, 0.1); */
+    display: flex;
+    width: 100vw;
+    height: 100px;
+    justify-content: space-between;
+    position: fixed;
+    padding: 15px;
+    background-color: rgba(51, 51, 51, 0.534);
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+}
+.logo-da{
+    height: 4vh;
+}
+.logo > h1{
+    color: var(--white-color);
+}
+
+.links{
+    display: flex;
+}
+.li-links{
+    list-style-type: none;
+}
+.a-links{
+    text-decoration: none;
+    color: var(--white-color);
+    margin: 0.5vw;
+}
+.a-links > svg{
+    margin-right: 4px;
+}
+.contributor-container{
+    text-align: right;
+    margin-right: 3vw;
+}
+.contributor-container > h3{
+    color: var(--white-color);
+}
+
+/*       The Landing sheet is styled here       */
+#landing{
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+    background-image: url(img/gradient-ai-cloud-with-broken-pieces.jpg);
+    background-size: cover;
+    background-attachment: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#landing > h5{
+    background-color:rgba(0, 0, 0, 0.6);
+    animation: float 5s infinite ease-in-out;
+}
+.Prompt-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+input,button{
+    border-radius: 5px;
+    width: 50vw;
+    height: 10vh;
+    margin: 2vh;
+}
+button{
+    background-color: rgb(224, 221, 0);
+    font-size: 1.5em;
+    cursor: pointer;
+    border: none;
+    color: black;
+    animation: in-animation 1s;
+}
