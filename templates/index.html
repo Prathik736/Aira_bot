@@ -40,5 +40,26 @@
             <h5 style="color: whitesmoke">This is a beta webpage.Dont worry about colors,animations.<br>This page is to connect the frontend and backend.<br>The real page would be created by hemanth</h5>
             <div id="generatedImageContainer"></div>
         </main>
+<!----  Hemanth After This Line Everything you see is javascript  ----->
+        <script>
+        async function generateImage() {
+            const prompt = document.getElementById("promptInput").value;
+            const response = await fetch('http://localhost:8000/generate_image/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `prompt=${encodeURIComponent(prompt)}`,
+            });
+            const data = await response.json();
+
+            const img = document.createElement("img");
+            img.src = `data:image/png;base64,${data.image_data}`;
+            
+            const container = document.getElementById("generatedImageContainer");
+            container.innerHTML = "";
+            container.appendChild(img);
+            }
+        </script>
     </body>
 </html>
