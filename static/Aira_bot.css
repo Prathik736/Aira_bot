@@ -48,24 +48,17 @@ header{
     height: 100px;
     justify-content: space-between;
     position: fixed;
+    top: 0;
     padding: 15px;
-    background-color: rgba(51, 51, 51, 0.534);
+    /* background-color: rgba(51, 51, 51, 0.3); */
     align-items: center;
 }
 
 .logo{
     display: flex;
 } 
-    
-.logo-container >.logo > h1 {
-    margin-left:20px;
-}
-
 .logo-da{
     height: 4vh;
-}
-.logo > h1{
-    color: var(--Grey);
 }
 
 .links{
@@ -79,6 +72,9 @@ header{
     color: var(--white-color);
     margin: 0.5vw;
 }
+.a-links:hover{
+    text-decoration: underline;
+}
 .a-links > svg{
     margin-right: 4px;
 }
@@ -87,8 +83,11 @@ header{
     margin-right: 3vw;
 }
 .contributor-container > h3{
-     text-decoration:underline;
+    text-decoration: none;
     color: var(--white-color);
+}
+.contributor-container > h3:hover{
+    text-decoration: underline;
 }
 
 /*       The Landing sheet is styled here       */
@@ -96,17 +95,21 @@ header{
     width: 100vw;
     height: 100vh;
     background-color:blue;
-    background-image: url(img/gradient-ai-cloud-with-broken-pieces.jpg);
+    background-image: url("https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111356.jpg?w=740");
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-#landing > h5{
-    background-color:rgba(0, 0, 0, 0.6);
-
+#landing> h1 {
+    color: whitesmoke;
+}
+#landing > h6{
+    background-color:rgba(53, 53, 53, 0.6);
+    padding: 20px;
+    border-radius: 25px;
 }
 .Prompt-container{
     display: flex;
@@ -114,22 +117,83 @@ header{
     align-items: center;
     justify-content: center;
 }
-input,
+input{
+    border-radius: 10px;
+    width: 30vw;
+    height: 7vh;
+    margin: 2vh;
+    border:none;
+}
 
 button{
     border-radius: 5px;
     width: 30vw;
-    height: 5vh;
-    margin: 2vh;
-    border:none;
-    
-}
-
-button{
-    background-color: rgb(83, 83, 79);
-    font-size: 1.5em;
+    height: 12vh;
+    border-style: solid;
+    border-radius: 20px;
+    background-color: rgba(238, 86, 40, 0);
+    font-size: 2em;
     cursor: pointer;
-    border: none;
-    color: black;
+    border: solid;
+    padding: 10px;
+    color: rgb(255, 255, 255);
     animation: in-animation 1s;
 }
+button:hover{
+    background-color: rgba(180, 180, 180, 0.1);
+}
+
+/* The about sheet goes below from here */
+.background-video{
+    position: absolute;
+    z-index: -99;
+}
+
+#about-sheet{
+    background-color: rgba(0,0,0,0.8);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.about-data{
+    width: 120vh;
+    height: 40vh;
+    border: solid;
+    border-radius: 15px;
+    border-color: whitesmoke;
+}
+.about-data > h1{
+    margin: 0;
+    color: whitesmoke;
+    /* background-color:rgba(0, 0, 0, 0.6); */
+}
+.about-data > h1:hover{
+    text-decoration:underline;
+}
+
+.about-data > h4{
+    font-style: italic;
+    color: whitesmoke;
+}
+
+.about-links{
+    color:whitesmoke;
+    padding: 0.8vh;
+    border-radius:8px;
+}
+.about-links:hover{
+    background-color:rgba(168, 168, 168, 0.1);
+}
+
+.caution-line{
+    width: 150vh;
+}
+.caution-line > h6{
+    color: whitesmoke;
+    font-style: italic;
+    font-weight: bold;
+}
+
