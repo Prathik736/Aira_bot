@@ -14,7 +14,7 @@ body{
     --white-color: rgb(255, 255, 255);
 }
 
-/*          Fuc***g Animations                           */
+/*          Fuc***g keyframe Animations                           */
 @keyframes in-animation{
     from{
         transform: scale(80%);
@@ -24,24 +24,64 @@ body{
     }
 }
 
-@keyframes float{
-    0%,60%,100%{
-        transform: translateY(0px);
-        transform: scale(90%);
+@keyframes moveElement {
+    0% {
+        transform: translate(100px,10px);
     }
-    25%{
-        transform: translateY(10px);
-    }
-    50%{
-        transform: translateY(15px);
-    }
-    75%{
-        transform: translateY(10px);
-    }
-    90%{
-        transform: translateY(5px);
+    100% {
+        transform: translate(280px,280px);
     }
 }
+@keyframes moveElement2 {
+    0% {
+        transform: translate(-100px,-790px);
+    }
+    100% {
+        transform: translate(-380px,-280px);
+    }
+}
+@keyframes moveElement3 {
+    0% {
+        transform: translate(480px,-780px);
+    }
+    100% {
+        transform: translate(-480px,50px);
+    }
+}
+@keyframes moveElement4 {
+    0% {
+        transform: translate(260px,-380px);
+    }
+    100% {
+        transform: translate(500px,-650px);
+    }
+}
+@keyframes moverotateElement1 {
+    0% {
+        transform: rotate(0deg) translate(-25px,-600px);
+    }
+    100% {
+        transform: rotate(360deg) translate(180px,280px);
+    }
+}
+@keyframes moverotateElement2 {
+    0% {
+        transform: rotate(0deg) translate(-85px,-500px);
+    }
+    100% {
+        transform: rotate(400deg) translate(0px,0px);
+    }
+}
+
+@keyframes rotateAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
 /*          Top Header Elements are created here         */
 header{
     /* background-color:rgba(10, 59, 165, 0.1); */
@@ -168,7 +208,7 @@ button:hover{
 
 #about-sheet{
     background-color: rgba(0, 0, 0, 1);
-    background-image: url("https://i.pinimg.com/564x/86/fd/2f/86fd2ff339afeb8e16d826d7886389b7.jpg");
+    background-image: url("https://askingtips.com/dl/getty/tmp/fetchpik.com-4NWVKH0J6S.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -177,14 +217,21 @@ button:hover{
     align-items: center;
     text-align: center;
     justify-content: center;
+    box-shadow: 0 0 800px rgba(190, 0, 0,0.5);
+    overflow-y: hidden;
 }
 .about-data{
     width: 120vh;
     height: 40vh;
-    /* border: solid; */
-    border-radius: 15px;
+    border: solid;
+    border-radius: 0px;
     border-color: whitesmoke;
-    box-shadow: 0px 0px 200px 0px rgba(0, 0, 0, 0.808);
+}
+.about-data:hover{
+    /* border: solid; */
+    border-radius: 45px;
+    border-color: whitesmoke;
+    box-shadow: 0px 0px 800px 0px rgba(136, 8, 8, 0.8);
 }
 .about-data > h1{
     margin: 0;
@@ -217,4 +264,56 @@ button:hover{
     font-style: italic;
     font-weight: bold;
 }
+/* Geometric elements styling */
+.about-sheet {
+    position: relative;
+}
+
+.geometric-element-circle-1{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border-radius: 50%;
+    animation: moveElement 15s linear infinite alternate;
+}
+.geometric-element-circle-2{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(250, 250, 250, 0.3);
+    border-radius: 50%;
+    animation: moveElement4 10s infinite alternate;
+}
+.geometric-element-circle-3{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(250, 250, 250, 0.3);
+    border-radius: 50%;
+    animation: moveElement2 12s ease-in-out infinite alternate-reverse;
+}
+.geometric-element-circle-4{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border-radius: 50%;
+    animation: moveElement3 10s ease-in-out infinite alternate ;
+}
+.geometric-element-square-1{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(250, 250, 250, 0.2);
+    animation: moverotateElement1 12s linear infinite alternate;
+}
+.geometric-element-square-2{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(250, 250, 250, 0.2);
+    animation: moverotateElement2 25s ease-in-out infinite alternate;
+}
+
 
