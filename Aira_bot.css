@@ -102,7 +102,7 @@ header{
     width: 100vw;
     height: 100vh;
     background-color:blue;
-    background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjQ5MS1uYW5jZS0wOC1nYWxheHliYWNrZ3JvdW5kXzIuanBn.jpg");
+    background-image: url("https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111356.jpg?w=740");
     background-size: cover;
     background-attachment: fixed;
     display: flex;
@@ -158,6 +158,7 @@ button:hover{
     background-color: rgb(255, 255, 255);
     border-width: 1px;
     color: black;
+    box-shadow: 0px 0px 200px rgba(255, 255, 255,0.6)
 }
 /* -------------------------The about sheet goes below from here------------------------------------- */
 .background-video{
@@ -166,8 +167,10 @@ button:hover{
 }
 
 #about-sheet{
-    background-image: url("https://images.unsplash.com/photo-1624115572781-58c98c9cd50d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    background-color: rgba(238, 86, 40, 0);
+    background-color: rgba(0, 0, 0, 1);
+    background-image: url("https://i.pinimg.com/564x/86/fd/2f/86fd2ff339afeb8e16d826d7886389b7.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -178,9 +181,10 @@ button:hover{
 .about-data{
     width: 120vh;
     height: 40vh;
-    border: solid;
+    /* border: solid; */
     border-radius: 15px;
     border-color: whitesmoke;
+    box-shadow: 0px 0px 200px 0px rgba(0, 0, 0, 0.808);
 }
 .about-data > h1{
     margin: 0;
@@ -190,12 +194,10 @@ button:hover{
 .about-data > h1:hover{
     text-decoration:underline;
 }
-
 .about-data > h4{
     font-style: italic;
     color: whitesmoke;
 }
-
 .about-links{
     color:whitesmoke;
     padding: 0.8vh;
