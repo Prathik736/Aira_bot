@@ -12,7 +12,7 @@ import base64
 import torch
 
 app = FastAPI()
-
+auth_token = "Aira_bot"
 # Configure FastAPI to serve static files from the "static" directory
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
