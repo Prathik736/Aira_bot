@@ -1,6 +1,6 @@
 *{
     font-family: 'Poppins','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 body{
@@ -118,6 +118,10 @@ header{
     background-color:rgba(53, 53, 53, 0.6);
     padding: 20px;
     border-radius: 25px;
+    transition: filter 0.3s ease;
+}
+#landing > h6:hover{
+    filter: blur(5px); /* Adjust the blur intensity as needed */
 }
 .Prompt-container{
     display: flex;
@@ -149,15 +153,12 @@ button{
     padding: 10px;
     color: rgb(255, 255, 255);
     animation: in-animation 1s;
-    transition: backdrop-filter 0.3s ease;
 }
 button:hover{
     background-color: rgb(255, 255, 255);
     border-width: 1px;
     color: black;
-    backdrop-filter: blur(20px);
 }
-
 /* -------------------------The about sheet goes below from here------------------------------------- */
 .background-video{
     position: absolute;
