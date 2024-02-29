@@ -149,11 +149,13 @@ button{
     padding: 10px;
     color: rgb(255, 255, 255);
     animation: in-animation 1s;
+    transition: backdrop-filter 0.3s ease;
 }
 button:hover{
     background-color: rgb(255, 255, 255);
     border-width: 1px;
     color: black;
+    backdrop-filter: blur(20px);
 }
 
 /* -------------------------The about sheet goes below from here------------------------------------- */
