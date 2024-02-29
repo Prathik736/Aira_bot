@@ -291,7 +291,7 @@ button:hover{
     height: 30px;
     background-color: rgba(250, 250, 250, 0.3);
     border-radius: 50%;
-    animation: moveElement2 12s ease-in-out infinite alternate-reverse;
+    animation: moveElement2 25s ease-in-out infinite alternate-reverse;
 }
 .geometric-element-circle-4{
     position: absolute;
@@ -305,15 +305,15 @@ button:hover{
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: rgba(250, 250, 250, 0.2);
-    animation: moverotateElement1 12s linear infinite alternate;
+    background-color: rgba(250, 250, 250, 0.1);
+    animation: moverotateElement1 25s linear infinite alternate;
 }
 .geometric-element-square-2{
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: rgba(250, 250, 250, 0.2);
-    animation: moverotateElement2 25s ease-in-out infinite alternate;
+    background-color: rgba(250, 250, 250, 0.1);
+    animation: moverotateElement2 50s ease-in-out infinite alternate;
 }
 
 
