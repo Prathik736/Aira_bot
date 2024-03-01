@@ -222,7 +222,7 @@ header{
     background-color: rgba(53, 53, 53, 0.6);
     border-radius: 20px;
 }
-.contributor-container > h3{
+.contributor-container > h2{
     text-decoration: none;
     color: var(--white-color);
 }
