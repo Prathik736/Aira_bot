@@ -226,7 +226,7 @@ header{
     text-decoration: none;
     color: var(--white-color);
 }
-.contributor-container > h3:hover{
+.contributor-container > h2:hover{
     text-decoration: underline;
 }
 
