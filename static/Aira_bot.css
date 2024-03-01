@@ -1,18 +1,20 @@
 *{
-    font-family: 'Poppins','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: 'Poppins','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: all 0.5s ease;
 }
 
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 /*          CSS variables                                     */
 :root{
     --white-color: rgb(255, 255, 255);
 }
 
-/*          Fuc***g Animations                           */
+/*          Fuc***g keyframe Animations                           */
 @keyframes in-animation{
     from{
         transform: scale(80%);
@@ -22,24 +24,130 @@ body{
     }
 }
 
-@keyframes float{
-    0%,60%,100%{
-        transform: translateY(0px);
-        transform: scale(90%);
+@keyframes moveElement {
+    0% {
+        transform: translate(100px,10px);
     }
-    25%{
-        transform: translateY(10px);
-    }
-    50%{
-        transform: translateY(15px);
-    }
-    75%{
-        transform: translateY(10px);
-    }
-    90%{
-        transform: translateY(5px);
+    100% {
+        transform: translate(280px,280px);
     }
 }
+@keyframes moveElement2 {
+    0% {
+        transform: translate(-100px,-790px);
+    }
+    100% {
+        transform: translate(-380px,-280px);
+    }
+}
+@keyframes moveElement3 {
+    0% {
+        transform: translate(480px,-780px);
+    }
+    100% {
+        transform: translate(-480px,50px);
+    }
+}
+@keyframes moveElement4 {
+    0% {
+        transform: translate(260px,-380px);
+    }
+    100% {
+        transform: translate(500px,-650px);
+    }
+}
+@keyframes moverotateElement1 {
+    0% {
+        transform: rotate(0deg) translate(25px,-450px);
+    }
+    100% {
+        transform: rotate(360deg) translate(280px,380px);
+    }
+}
+@keyframes moverotateElement2 {
+    0% {
+        transform: rotate(0deg) translate(105px,-100px);
+    }
+    100% {
+        transform: rotate(360deg) translate(345px,-250px);
+    }
+}
+@keyframes moveElement-alt {
+    0%,100% {
+        transform: translate(400px,200px);
+    }
+    50% {
+        transform: translate(-600px,-780px);
+    }
+    75% {
+        transform: translate(-600px,-180px);
+    }
+}
+@keyframes moveElement2-alt {
+    0%,100% {
+        transform: translate(300px,-890px);
+    }
+    50% {
+        transform: translate(-580px,180px);
+    }
+    75% {
+        transform: translate(980px,80px);
+    }
+}
+@keyframes moveElement3-alt {
+    0%,100% {
+        transform: translate(-380px,-10px);
+    }
+    50% {
+        transform: translate(600px,-950px);
+    }
+    75% {
+        transform: translate(-600px,-950px);
+    }
+}
+@keyframes moveElement4-alt {
+    0% {
+        transform: translate(-180px,-20px);
+    }
+    50% {
+        transform: translate(500px,-650px);
+    }
+    75% {
+        transform: translate(-400px,-250px);
+    }
+    75% {
+        transform: translate(-400px,-650px);
+    }
+}
+@keyframes moverotateElement1-alt {
+    0%,100% {
+        transform: rotate(0deg) translate(50px,-550px);
+    }
+    50% {
+        transform: rotate(360deg) translate(-10px,0px);
+    }
+    75% {
+        transform: rotate(360deg) translate(-350px,-400px);
+    }
+}
+@keyframes moverotateElement2-alt {
+    0%,100% {
+        transform: rotate(0deg) translate(200px,250px);
+    }
+    50% {
+        transform: rotate(400deg) translate(-400px,-500px);
+    }
+}
+
+@keyframes rotateAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
 /*          Top Header Elements are created here         */
 header{
     /* background-color:rgba(10, 59, 165, 0.1); */
@@ -81,6 +189,11 @@ header{
 .contributor-container{
     text-align: right;
     margin-right: 3vw;
+    padding-right: 3vw
+}
+.contributor-container:hover{
+    background-color: rgba(53, 53, 53, 0.6);
+    border-radius: 20px;
 }
 .contributor-container > h3{
     text-decoration: none;
@@ -107,9 +220,14 @@ header{
     color: whitesmoke;
 }
 #landing > h6{
+    font-size: 0.7em;
     background-color:rgba(53, 53, 53, 0.6);
     padding: 20px;
     border-radius: 25px;
+    transition: filter 0.3s ease;
+}
+#landing > h6:hover{
+    filter: blur(5px); /* Adjust the blur intensity as needed */
 }
 .Prompt-container{
     display: flex;
@@ -123,9 +241,12 @@ input{
     height: 7vh;
     margin: 2vh;
     border:none;
+    background-color:rgba(53, 53, 53, 0.6);
+    color: whitesmoke;
 }
 
 button{
+    font-weight: 550;
     border-radius: 5px;
     width: 30vw;
     height: 12vh;
@@ -140,30 +261,43 @@ button{
     animation: in-animation 1s;
 }
 button:hover{
-    background-color: rgba(180, 180, 180, 0.1);
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: black;
+    box-shadow: 0px 0px 50px rgba(255, 255, 255,0.5);
 }
-
-/* The about sheet goes below from here */
+/* -------------------------The about sheet goes below from here------------------------------------- */
 .background-video{
     position: absolute;
     z-index: -99;
 }
 
 #about-sheet{
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 1);
+    background-image: url("https://askingtips.com/dl/getty/tmp/fetchpik.com-4NWVKH0J6S.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
+    box-shadow: 0 0 800px rgba(190, 0, 0,0.5);
+    overflow-y: hidden;
 }
 .about-data{
     width: 120vh;
     height: 40vh;
     border: solid;
-    border-radius: 15px;
+    border-radius: 0px;
     border-color: whitesmoke;
+}
+.about-data:hover{
+    /* border: solid; */
+    border-radius: 45px;
+    border-color: whitesmoke;
+    box-shadow: 0px 0px 800px 0px rgba(136, 8, 8, 0.8);
 }
 .about-data > h1{
     margin: 0;
@@ -173,27 +307,285 @@ button:hover{
 .about-data > h1:hover{
     text-decoration:underline;
 }
-
 .about-data > h4{
     font-style: italic;
     color: whitesmoke;
 }
-
 .about-links{
     color:whitesmoke;
     padding: 0.8vh;
     border-radius:8px;
 }
 .about-links:hover{
-    background-color:rgba(168, 168, 168, 0.1);
+    background-color:rgba(221, 221, 221, 0.1);
 }
 
 .caution-line{
-    width: 150vh;
+    align-items: center;
+    text-align: center;
+    width: 50vw;
 }
 .caution-line > h6{
     color: whitesmoke;
+    font-size: 1em;
     font-style: italic;
     font-weight: bold;
 }
+.about-sheet-container{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* Geometric elements styling */
+.about-sheet {
+    position: relative;
+}
 
+.geometric-element-circle-1{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border-radius: 50%;
+    animation: moveElement 45s linear infinite alternate;
+    filter: blur(5px);
+}
+.geometric-element-circle-2{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(250, 250, 250, 0.2);
+    border-radius: 50%;
+    animation: moveElement4 60s infinite alternate;
+    filter: blur(5px);
+}
+.geometric-element-circle-3{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(250, 250, 250, 0.2);
+    border-radius: 50%;
+    animation: moveElement2 75s ease-in-out infinite alternate-reverse;
+    filter: blur(5px);
+}
+.geometric-element-circle-4{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border-radius: 50%;
+    animation: moveElement3 65s ease-in-out infinite alternate ;
+    filter: blur(5px);
+}
+.geometric-element-square-1{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(250, 250, 250, 0.1);
+    animation: moverotateElement1 150s ease-in-out infinite alternate;
+    filter: blur(5px);
+}
+.geometric-element-square-2{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(250, 250, 250, 0.1);
+    animation: moverotateElement2 75s ease-in-out infinite alternate;
+    filter: blur(5px);
+}
+.geometric-element-circle-5{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border-radius: 50%;
+    animation: moveElement-alt 55s ease-in-out infinite alternate;
+    filter: blur(5px);
+}
+.geometric-element-circle-6{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(250, 250, 250, 0.2);
+    border-radius: 50%;
+    animation: moveElement4-alt 60s ease-in-out infinite alternate;
+    filter: blur(5px);
+}
+.geometric-element-circle-7{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border-radius: 50%;
+    animation: moveElement2-alt 70s ease-in-out infinite alternate-reverse;
+    filter: blur(5px);
+}
+.geometric-element-circle-8{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border-radius: 50%;
+    animation: moveElement3-alt 75s ease-in-out infinite alternate ;
+    filter: blur(5px);
+}
+.geometric-element-square-3{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(250, 250, 250, 0.1);
+    animation: moverotateElement1-alt 100s ease-in-out infinite;
+    filter: blur(5px);
+}
+.geometric-element-square-4{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(250, 250, 250, 0.1);
+    animation: moverotateElement2-alt 80s ease-in-out infinite alternate;
+    filter: blur(5px);
+}
+
+/* -------------------- Media Qyeries -------------------*/
+/* --------------------Small Laptop Screens---------------*/
+@media screen and (max-width:1024px){
+    input{
+        width: 50vw;
+    }
+    
+    button{
+        width: 50vw;
+    }
+    .about-data{
+        width: 90vh;
+    }
+    .caution-line{
+        width: 40vw;
+    }
+    .caution-line > h6{
+        font-size: 0.7em;
+    }
+    .contributor-container{
+        margin-right: 2vw;
+        padding-right: 1vw
+    }
+}
+
+/* --------------------- Tablet devices ----------------------*/
+@media screen and (max-width:768px){
+    header{
+        height: 50px;
+        justify-content: space-between;
+        position: fixed;
+        top: 4px;
+        padding: 10px;
+    }
+    .contributor-container{
+        font-size: 0.8em;
+    }
+    .disp-none-mobile{
+        display: none;
+    }
+    .about-data > h1{
+        font-size: 2em;
+    }
+    .about-data > h4{
+        font-weight: normal;
+        font-size: 0.8em;
+    }
+    .caution-line{
+        width: 50vw;
+    }
+}
+
+/* --------------------- Mobile devices ----------------------*/
+@media screen and (max-width:475px){
+    input{
+        width: 60vw;
+    }
+    
+    button{
+        font-weight: 400;
+        width: 60vw;
+        height: 10vh;
+        font-size: 1.5em;
+        padding: 0px;
+        border-width: 1px;
+    }
+    #landing > h6{
+        font-size: 0.5em;
+        padding: 8px;
+    }
+    .about-data{
+        width: 60vw;
+        height: 60vh
+    }
+    .caution-line > h6{
+        font-size: 0.4em;
+    }
+    #about-sheet{
+        text-align: left;
+        justify-content: center;
+        box-shadow: 0 0 800px rgba(190, 0, 0,0.5);
+        overflow-y: hidden;
+    }
+    .dropdown {
+        display: inline-block;
+    }
+} 
+
+/*---------------- M-Mobile devices ---------------------*/
+@media screen and (max-width:375px){
+    input{
+        width: 80vw;
+    }
+    
+    button{
+        width: 70vw;
+    }
+    .about-data{
+        width: 70vw;
+        height: 60vh
+    }
+}
+/*  dropdowns hided till the tablet appear */
+@media screen and (min-width:765px){
+    .dropdown{
+        display: none;
+    }
+}
+/*--- dropdown box for contributors screenwidth < 425px  ----*/
+.dropbtn{
+    font-weight: 450;
+    padding: 0;
+    font-size: 1em;
+    width: 15vw;
+    height: 6vh;
+    border-radius: 10px;
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content > ul > li {
+    list-style-type: none;
+}
+.links > li >a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
