@@ -170,6 +170,39 @@ body{
       transform: translateY(0);
     }
   }
+  @keyframes lightLeakAnimation{
+    0%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+  }
+  @keyframes backgroundAnimation {
+    0% {
+      background-color: rgba(44, 44, 44, 0.7);
+      transform: translate(0%, 0%) scale(1);
+    }
+    25% {
+      background-color: rgba(46, 46, 46, 0.4);
+      transform: translate(0%, 0%) scale(0.7);
+    }
+    50% {
+      background-color: rgba(2, 2, 2, 0.7);
+      transform: translate(0%, 0%) scale(0.8);
+    }
+    75% {
+      background-color: rgba(17, 17, 17, 0.4);
+      transform: translate(0%, 0%) scale(0.9);
+    }
+    100% {
+      background-color: rgba(37, 37, 37, 0.7);
+      transform: translate(0%, 0%) scale(1);
+    }
+  }
   
 /*          Top Header Elements are created here         */
 header{
@@ -226,7 +259,7 @@ header{
     text-decoration: none;
     color: var(--white-color);
 }
-.contributor-container > h2:hover{
+.contributor-container > h3:hover{
     text-decoration: underline;
 }
 
@@ -234,7 +267,7 @@ header{
 #landing{
     width: 100vw;
     height: 100vh;
-    background-color:blue;
+    background-color:rgb(255, 255, 255);
     background-image: url("https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111356.jpg?w=740");
     background-size: cover;
     background-attachment: fixed;
@@ -306,8 +339,8 @@ button:hover{
 }
 
 #about-sheet{
-    background-color: rgba(0, 0, 0, 1);
-    background-image: url("img/fetchpik.com-4NWVKH0J6S.jpg");
+    background-image: linear-gradient(to bottom,rgb(95, 19, 19),rgb(44, 16, 16));
+    /* background-image: url("img/fetchpik.com-4NWVKH0J6S.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -317,7 +350,7 @@ button:hover{
     text-align: center;
     justify-content: center;
     box-shadow: 0 0 800px rgba(190, 0, 0,0.5);
-    overflow-y: hidden;
+    overflow-y:visible;
 }
 .about-data{
     width: 120vh;
@@ -518,15 +551,20 @@ button:hover{
 .dropdown-content > ul > li {
     list-style-type: none;
 }
+.links-container{
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+}
 .links-container > li >a {
     color: rgb(0, 0, 0);
     padding: 8px 4px;
     text-decoration: none;
     display: block;
-    text-align: left;
+    /* text-align: center; */
 }
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #696969;
 }
 /* -------------------- Media Qyeries -------------------*/
 /* --------------------Small Laptop Screens---------------*/
@@ -581,15 +619,36 @@ button:hover{
 }
 
 /* --------------------- Mobile devices ----------------------*/
-@media screen and (max-width:475px){
+@media screen and (max-width:425px){
+    header{
+        width: 100vw;
+        height: 8vh;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        padding: 15px;
+        background-color: rgba(255, 255, 255,0.5);
+        align-items: center;
+    }
+    #landing{
+        /* background-image: url("https://img.freepik.com/premium-photo/ai-artificial-intelligence-conceptconceptual-image-modern-technology-networking-concept_947762-5668.jpg?w=360"); */
+        background-image: url("https://1.bp.blogspot.com/-lyeT9ZcKtDc/YDulo-eArvI/AAAAAAAAgOg/zOiAbOH8hDsou_6OGip36M1sG9-EeKpkgCLcBGAsYHQ/s640-rw/v4-WIRE-MOBILE-HD.png");
+        background-size: cover;
+        background-repeat: no-repeat
+    }
+    #landing > h1{
+        font-size: 3em;
+    }
     input{
-        width: 60vw;
+        width: 80vw;
+        border: solid;
     }
     
     button{
+        margin-top: 2vh;
         font-weight: 400;
-        width: 60vw;
-        height: 10vh;
+        width: 80vw;
+        height: 6vh;
         font-size: 1.5em;
         padding: 0px;
         border-width: 1px;
@@ -597,6 +656,10 @@ button:hover{
     #landing > h6{
         font-size: 0.5em;
         padding: 8px;
+    }
+    #about-sheet{
+        background-image: linear-gradient(to top,rgb(75, 23, 35),rgb(49, 9, 18));
+        box-shadow: 30px 30px 100px 0 #000000
     }
     .about-data{
         width: 60vw;
@@ -614,7 +677,15 @@ button:hover{
     .dropdown {
         display: inline-block;
     }
-} 
+    .dropdown-content {
+        margin-top: 1.8vh;
+        margin-left: -20vw;
+        border-radius: 8px;
+    }
+    .dropbtn{
+        color: black;
+        padding: 0;
+    }
 
 /*---------------- M-Mobile devices ---------------------*/
 @media screen and (max-width:375px){
@@ -629,10 +700,35 @@ button:hover{
         width: 70vw;
         height: 60vh
     }
+    #landing{
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+/*---------------- M-Mobile devices ---------------------*/
+@media screen and (max-width:375px){
+    input{
+        width: 90vw;
+    }
+    
+    button{
+        margin-top: 2vh;
+        width: 70vw;
+        height: 7vh;
+    }
+    .about-data{
+        width: 70vw;
+        height: 60vh
+    }
 }
 /*  dropdowns hided till the tablet appear */
 @media screen and (min-width:765px){
     .dropdown{
         display: none;
     }
-}
+}}
