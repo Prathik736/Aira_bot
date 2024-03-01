@@ -252,14 +252,15 @@ header{
     padding-right: 3vw
 }
 .contributor-container:hover{
-    background-color: rgba(53, 53, 53, 0.6);
+    background-color: rgba(53, 53, 53, 0.4);
     border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0,0.5);
 }
 .contributor-container > h2{
     text-decoration: none;
-    color: var(--white-color);
+    color: whitesmoke;
 }
-.contributor-container > h3:hover{
+.contributor-container > h2:hover{
     text-decoration: underline;
 }
 
@@ -531,7 +532,7 @@ button:hover{
     margin-right: 10vw;
 }
 .dropdown {
-    display: inline-block;
+    display: none;
     position: relative;
 }
 .dropdown-content {
@@ -616,6 +617,9 @@ button:hover{
     .caution-line{
         width: 50vw;
     }
+    .dropdown{
+        display: inline-block;
+    }
 }
 
 /* --------------------- Mobile devices ----------------------*/
@@ -674,19 +678,23 @@ button:hover{
         box-shadow: 0 0 800px rgba(190, 0, 0,0.5);
         overflow-y: hidden;
     }
-    .dropdown {
-        display: inline-block;
+    .dropdown{
+        margin-top: 4vh;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
     }
     .dropdown-content {
-        margin-top: 1.8vh;
+        margin-top: 1vh;
         margin-left: -20vw;
-        border-radius: 8px;
+        border-width: 0px;
     }
     .dropbtn{
+        margin-top: 0;
         color: black;
-        padding: 0;
+        padding: 0px;
     }
-
+}
 /*---------------- M-Mobile devices ---------------------*/
 @media screen and (max-width:375px){
     input{
@@ -726,9 +734,3 @@ button:hover{
         height: 60vh
     }
 }
-/*  dropdowns hided till the tablet appear */
-@media screen and (min-width:765px){
-    .dropdown{
-        display: none;
-    }
-}}
