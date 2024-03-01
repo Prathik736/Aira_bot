@@ -58,18 +58,84 @@ body{
 }
 @keyframes moverotateElement1 {
     0% {
-        transform: rotate(0deg) translate(-25px,-600px);
+        transform: rotate(0deg) translate(25px,-450px);
     }
     100% {
-        transform: rotate(360deg) translate(180px,280px);
+        transform: rotate(360deg) translate(280px,380px);
     }
 }
 @keyframes moverotateElement2 {
     0% {
-        transform: rotate(0deg) translate(-85px,-500px);
+        transform: rotate(0deg) translate(105px,-100px);
     }
     100% {
-        transform: rotate(400deg) translate(0px,0px);
+        transform: rotate(360deg) translate(345px,-250px);
+    }
+}
+@keyframes moveElement-alt {
+    0%,100% {
+        transform: translate(400px,200px);
+    }
+    50% {
+        transform: translate(-600px,-780px);
+    }
+    75% {
+        transform: translate(-600px,-180px);
+    }
+}
+@keyframes moveElement2-alt {
+    0%,100% {
+        transform: translate(300px,-890px);
+    }
+    50% {
+        transform: translate(-580px,180px);
+    }
+    75% {
+        transform: translate(980px,80px);
+    }
+}
+@keyframes moveElement3-alt {
+    0%,100% {
+        transform: translate(-380px,-10px);
+    }
+    50% {
+        transform: translate(600px,-950px);
+    }
+    75% {
+        transform: translate(-600px,-950px);
+    }
+}
+@keyframes moveElement4-alt {
+    0% {
+        transform: translate(-180px,-20px);
+    }
+    50% {
+        transform: translate(500px,-650px);
+    }
+    75% {
+        transform: translate(-400px,-250px);
+    }
+    75% {
+        transform: translate(-400px,-650px);
+    }
+}
+@keyframes moverotateElement1-alt {
+    0%,100% {
+        transform: rotate(0deg) translate(50px,-550px);
+    }
+    50% {
+        transform: rotate(360deg) translate(-10px,0px);
+    }
+    75% {
+        transform: rotate(360deg) translate(-350px,-400px);
+    }
+}
+@keyframes moverotateElement2-alt {
+    0%,100% {
+        transform: rotate(0deg) translate(200px,250px);
+    }
+    50% {
+        transform: rotate(400deg) translate(-400px,-500px);
     }
 }
 
@@ -196,9 +262,9 @@ button{
 }
 button:hover{
     background-color: rgb(255, 255, 255);
-    border-width: 1px;
+    border: none;
     color: black;
-    box-shadow: 0px 0px 200px rgba(255, 255, 255,0.6)
+    box-shadow: 0px 0px 50px rgba(255, 255, 255,0.5);
 }
 /* -------------------------The about sheet goes below from here------------------------------------- */
 .background-video{
@@ -255,6 +321,7 @@ button:hover{
 }
 
 .caution-line{
+    align-items: center;
     text-align: center;
     width: 50vw;
 }
@@ -263,6 +330,11 @@ button:hover{
     font-size: 1em;
     font-style: italic;
     font-weight: bold;
+}
+.about-sheet-container{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 /* Geometric elements styling */
 .about-sheet {
@@ -275,26 +347,26 @@ button:hover{
     height: 50px;
     background-color: rgba(250, 250, 250, 0.1);
     border-radius: 50%;
-    animation: moveElement 15s linear infinite alternate;
-    filter: blur(10px);
+    animation: moveElement 45s linear infinite alternate;
+    filter: blur(5px);
 }
 .geometric-element-circle-2{
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: rgba(250, 250, 250, 0.3);
+    background-color: rgba(250, 250, 250, 0.2);
     border-radius: 50%;
-    animation: moveElement4 10s infinite alternate;
-    filter: blur(10px);
+    animation: moveElement4 60s infinite alternate;
+    filter: blur(5px);
 }
 .geometric-element-circle-3{
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: rgba(250, 250, 250, 0.3);
+    background-color: rgba(250, 250, 250, 0.2);
     border-radius: 50%;
-    animation: moveElement2 25s ease-in-out infinite alternate-reverse;
-    filter: blur(10px);
+    animation: moveElement2 75s ease-in-out infinite alternate-reverse;
+    filter: blur(5px);
 }
 .geometric-element-circle-4{
     position: absolute;
@@ -302,24 +374,218 @@ button:hover{
     height: 70px;
     background-color: rgba(250, 250, 250, 0.1);
     border-radius: 50%;
-    animation: moveElement3 10s ease-in-out infinite alternate ;
-    filter: blur(10px);
+    animation: moveElement3 65s ease-in-out infinite alternate ;
+    filter: blur(5px);
 }
 .geometric-element-square-1{
     position: absolute;
     width: 60px;
     height: 60px;
     background-color: rgba(250, 250, 250, 0.1);
-    animation: moverotateElement1 25s linear infinite alternate;
-    filter: blur(10px);
+    animation: moverotateElement1 150s ease-in-out infinite alternate;
+    filter: blur(5px);
 }
 .geometric-element-square-2{
     position: absolute;
     width: 60px;
     height: 60px;
     background-color: rgba(250, 250, 250, 0.1);
-    animation: moverotateElement2 50s ease-in-out infinite alternate;
-    filter: blur(10px);
+    animation: moverotateElement2 75s ease-in-out infinite alternate;
+    filter: blur(5px);
+}
+.geometric-element-circle-5{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border-radius: 50%;
+    animation: moveElement-alt 55s ease-in-out infinite alternate;
+    filter: blur(5px);
+}
+.geometric-element-circle-6{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(250, 250, 250, 0.2);
+    border-radius: 50%;
+    animation: moveElement4-alt 60s ease-in-out infinite alternate;
+    filter: blur(5px);
+}
+.geometric-element-circle-7{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border-radius: 50%;
+    animation: moveElement2-alt 70s ease-in-out infinite alternate-reverse;
+    filter: blur(5px);
+}
+.geometric-element-circle-8{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border-radius: 50%;
+    animation: moveElement3-alt 75s ease-in-out infinite alternate ;
+    filter: blur(5px);
+}
+.geometric-element-square-3{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(250, 250, 250, 0.1);
+    animation: moverotateElement1-alt 100s ease-in-out infinite;
+    filter: blur(5px);
+}
+.geometric-element-square-4{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(250, 250, 250, 0.1);
+    animation: moverotateElement2-alt 80s ease-in-out infinite alternate;
+    filter: blur(5px);
 }
 
+/* -------------------- Media Qyeries -------------------*/
+/* --------------------Small Laptop Screens---------------*/
+@media screen and (max-width:1024px){
+    input{
+        width: 50vw;
+    }
+    
+    button{
+        width: 50vw;
+    }
+    .about-data{
+        width: 90vh;
+    }
+    .caution-line{
+        width: 40vw;
+    }
+    .caution-line > h6{
+        font-size: 0.7em;
+    }
+    .contributor-container{
+        margin-right: 2vw;
+        padding-right: 1vw
+    }
+}
 
+/* --------------------- Tablet devices ----------------------*/
+@media screen and (max-width:768px){
+    header{
+        height: 50px;
+        justify-content: space-between;
+        position: fixed;
+        top: 4px;
+        padding: 10px;
+    }
+    .contributor-container{
+        font-size: 0.8em;
+    }
+    .disp-none-mobile{
+        display: none;
+    }
+    .about-data > h1{
+        font-size: 2em;
+    }
+    .about-data > h4{
+        font-weight: normal;
+        font-size: 0.8em;
+    }
+    .caution-line{
+        width: 50vw;
+    }
+}
+
+/* --------------------- Mobile devices ----------------------*/
+@media screen and (max-width:475px){
+    input{
+        width: 60vw;
+    }
+    
+    button{
+        font-weight: 400;
+        width: 60vw;
+        height: 10vh;
+        font-size: 1.5em;
+        padding: 0px;
+        border-width: 1px;
+    }
+    #landing > h6{
+        font-size: 0.5em;
+        padding: 8px;
+    }
+    .about-data{
+        width: 60vw;
+        height: 60vh
+    }
+    .caution-line > h6{
+        font-size: 0.4em;
+    }
+    #about-sheet{
+        text-align: left;
+        justify-content: center;
+        box-shadow: 0 0 800px rgba(190, 0, 0,0.5);
+        overflow-y: hidden;
+    }
+    .dropdown {
+        display: inline-block;
+    }
+} 
+
+/*---------------- M-Mobile devices ---------------------*/
+@media screen and (max-width:375px){
+    input{
+        width: 80vw;
+    }
+    
+    button{
+        width: 70vw;
+    }
+    .about-data{
+        width: 70vw;
+        height: 60vh
+    }
+}
+/*  dropdowns hided till the tablet appear */
+@media screen and (min-width:765px){
+    .dropdown{
+        display: none;
+    }
+}
+/*--- dropdown box for contributors screenwidth < 425px  ----*/
+.dropbtn{
+    font-weight: 450;
+    padding: 0;
+    font-size: 1em;
+    width: 15vw;
+    height: 6vh;
+    border-radius: 10px;
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content > ul > li {
+    list-style-type: none;
+}
+.links > li >a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
