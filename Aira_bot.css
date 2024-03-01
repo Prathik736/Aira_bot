@@ -139,12 +139,35 @@ body{
     }
 }
 
-@keyframes rotateAnimation {
+@keyframes zoomIn-bg {
     0% {
-      transform: rotate(0deg);
+      transform: scale(1.5);
     }
     100% {
-      transform: rotate(360deg);
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }  
+  @keyframes Opacitydown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
   
@@ -177,14 +200,18 @@ header{
 }
 .a-links{
     text-decoration:none;
-    color: var(--white-color);
+    color: whitesmoke;
     margin: 0.5vw;
+}
+.li-links > a{
+    color: whitesmoke;
 }
 .a-links:hover{
     text-decoration: underline;
 }
 .a-links > svg{
     margin-right: 4px;
+    color: whitesmoke;
 }
 .contributor-container{
     text-align: right;
@@ -216,8 +243,13 @@ header{
     justify-content: center;
     flex-direction: column;
 }
+#landing{
+    background-image: url("https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111356.jpg?w=740");
+    animation: zoomIn-bg 1s ease-in-out;
+}
 #landing> h1 {
     color: whitesmoke;
+    animation: slideDown 3s ease-out;
 }
 #landing > h6{
     font-size: 0.7em;
@@ -243,6 +275,7 @@ input{
     border:none;
     background-color:rgba(53, 53, 53, 0.6);
     color: whitesmoke;
+    animation: Opacitydown 3s ease-in-out;
 }
 
 button{
@@ -258,7 +291,7 @@ button{
     border: solid;
     padding: 10px;
     color: rgb(255, 255, 255);
-    animation: in-animation 1s;
+    animation: Opacitydown 2s ease-in-out;
 }
 button:hover{
     background-color: rgb(255, 255, 255);
@@ -274,7 +307,7 @@ button:hover{
 
 #about-sheet{
     background-color: rgba(0, 0, 0, 1);
-    background-image: url("https://askingtips.com/dl/getty/tmp/fetchpik.com-4NWVKH0J6S.jpg");
+    background-image: url("img/fetchpik.com-4NWVKH0J6S.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -446,6 +479,55 @@ button:hover{
     filter: blur(5px);
 }
 
+.geometric-element-circle-1:hover,.geometric-element-circle-2:hover,
+.geometric-element-circle-3:hover,.geometric-element-circle-4:hover,
+.geometric-element-circle-5:hover,.geometric-element-circle-6:hover,
+.geometric-element-circle-7:hover,.geometric-element-circle-8:hover,
+.geometric-element-square-1:hover,.geometric-element-square-2:hover,
+.geometric-element-square-3:hover,.geometric-element-square-4:hover{
+    filter: blur(15px);
+}
+/*--- dropdown box for contributors screenwidth < 425px  ----*/
+.dropbtn{
+    font-weight: 450;
+    padding: 0;
+    font-size: 1em;
+    width: 15vw;
+    height: 6vh;
+    border-radius: 10px;
+    margin-right: 10vw;
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    margin-left: -25vw;
+    border-radius: 8px;
+    background-color: #d6d6d6;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: flex; /* or block, depending on your layout needs */
+}
+.dropdown-content > ul > li {
+    list-style-type: none;
+}
+.links-container > li >a {
+    color: rgb(0, 0, 0);
+    padding: 8px 4px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
 /* -------------------- Media Qyeries -------------------*/
 /* --------------------Small Laptop Screens---------------*/
 @media screen and (max-width:1024px){
@@ -553,39 +635,4 @@ button:hover{
     .dropdown{
         display: none;
     }
-}
-/*--- dropdown box for contributors screenwidth < 425px  ----*/
-.dropbtn{
-    font-weight: 450;
-    padding: 0;
-    font-size: 1em;
-    width: 15vw;
-    height: 6vh;
-    border-radius: 10px;
-}
-.dropdown {
-    display: inline-block;
-    position: relative;
-}
-.dropdown-content {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-.dropdown-content > ul > li {
-    list-style-type: none;
-}
-.links > li >a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-.dropdown-content a:hover {
-    background-color: #ddd;
 }
