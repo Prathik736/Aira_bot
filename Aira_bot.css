@@ -359,10 +359,13 @@ button:hover{
     border: solid;
     border-radius: 0px;
     border-color: whitesmoke;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 .about-data:hover{
     /* border: solid; */
-    border-radius: 45px;
+    border-radius: 8px;
     border-color: whitesmoke;
     box-shadow: 0px 0px 800px 0px rgba(136, 8, 8, 0.8);
 }
