@@ -42,9 +42,9 @@ async def generate_image(prompt: str = Form(...)):
         buffer = BytesIO()
         image.save(buffer, format='PNG')
         imgstr = base64.b64encode(buffer.getvalue()).decode('utf-8')
-        image_data.append({"image_data": imgstr})
+        image_data.append(imgstr)
 
-    return image_data
+    return {"image_data":image_data}
 
 if __name__ == "__main__":
     import uvicorn
