@@ -8,6 +8,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    overflow-y:hidden;
 }
 /*          CSS variables                                     */
 :root{
@@ -34,7 +35,7 @@ body{
 }
 @keyframes moveElement2 {
     0% {
-        transform: translate(-100px,-790px);
+        transform: translate(-100px,-490px);
     }
     100% {
         transform: translate(-380px,-280px);
@@ -42,7 +43,7 @@ body{
 }
 @keyframes moveElement3 {
     0% {
-        transform: translate(480px,-780px);
+        transform: translate(480px,-480px);
     }
     100% {
         transform: translate(-480px,50px);
@@ -53,7 +54,7 @@ body{
         transform: translate(260px,-380px);
     }
     100% {
-        transform: translate(500px,-650px);
+        transform: translate(500px,-450px);
     }
 }
 @keyframes moverotateElement1 {
@@ -77,7 +78,7 @@ body{
         transform: translate(400px,200px);
     }
     50% {
-        transform: translate(-600px,-780px);
+        transform: translate(-600px,-480px);
     }
     75% {
         transform: translate(-600px,-180px);
@@ -85,7 +86,7 @@ body{
 }
 @keyframes moveElement2-alt {
     0%,100% {
-        transform: translate(300px,-890px);
+        transform: translate(300px,-490px);
     }
     50% {
         transform: translate(-580px,180px);
@@ -102,7 +103,7 @@ body{
         transform: translate(600px,-950px);
     }
     75% {
-        transform: translate(-600px,-950px);
+        transform: translate(-600px,-450px);
     }
 }
 @keyframes moveElement4-alt {
@@ -110,18 +111,18 @@ body{
         transform: translate(-180px,-20px);
     }
     50% {
-        transform: translate(500px,-650px);
+        transform: translate(500px,-450px);
     }
     75% {
         transform: translate(-400px,-250px);
     }
     75% {
-        transform: translate(-400px,-650px);
+        transform: translate(-400px,-450px);
     }
 }
 @keyframes moverotateElement1-alt {
     0%,100% {
-        transform: rotate(0deg) translate(50px,-550px);
+        transform: rotate(0deg) translate(50px,-450px);
     }
     50% {
         transform: rotate(360deg) translate(-10px,0px);
@@ -135,19 +136,103 @@ body{
         transform: rotate(0deg) translate(200px,250px);
     }
     50% {
-        transform: rotate(400deg) translate(-400px,-500px);
+        transform: rotate(400deg) translate(-400px,-425px);
     }
 }
 
-@keyframes rotateAnimation {
+@keyframes zoomIn-bg {
     0% {
-      transform: rotate(0deg);
+      transform: scale(1.5);
     }
     100% {
-      transform: rotate(360deg);
+      transform: scale(1);
     }
   }
-  
+
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }  
+  @keyframes Opacitydown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes lightLeakAnimation{
+    0%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+  }
+  @keyframes backgroundAnimation {
+    0% {
+      background-color: rgba(44, 44, 44, 0.7);
+      transform: translate(0%, 0%) scale(1);
+    }
+    25% {
+      background-color: rgba(46, 46, 46, 0.4);
+      transform: translate(0%, 0%) scale(0.7);
+    }
+    50% {
+      background-color: rgba(2, 2, 2, 0.7);
+      transform: translate(0%, 0%) scale(0.8);
+    }
+    75% {
+      background-color: rgba(17, 17, 17, 0.4);
+      transform: translate(0%, 0%) scale(0.9);
+    }
+    100% {
+      background-color: rgba(37, 37, 37, 0.7);
+      transform: translate(0%, 0%) scale(1);
+    }
+  }
+  /*         Light leak animations               */
+  .light-leak {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.05) 10%, transparent 70%);
+    opacity: 0;
+    animation: lightLeakAnimation 8s ease-in-out infinite;
+    z-index: -2;
+}
+
+@keyframes lightLeakAnimation {
+    0%, 100% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    25% {
+        opacity: 0.5;
+        transform: translate(0,0);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    75% {
+        opacity: 0.5;
+        transform: translate(0,0);
+    }
+}
 /*          Top Header Elements are created here         */
 header{
     /* background-color:rgba(10, 59, 165, 0.1); */
@@ -177,14 +262,18 @@ header{
 }
 .a-links{
     text-decoration:none;
-    color: var(--white-color);
+    color: whitesmoke;
     margin: 0.5vw;
+}
+.li-links > a{
+    color: whitesmoke;
 }
 .a-links:hover{
     text-decoration: underline;
 }
 .a-links > svg{
     margin-right: 4px;
+    color: whitesmoke;
 }
 .contributor-container{
     text-align: right;
@@ -192,22 +281,26 @@ header{
     padding-right: 3vw
 }
 .contributor-container:hover{
-    background-color: rgba(53, 53, 53, 0.6);
+    background-color: rgba(53, 53, 53, 0.4);
     border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0,0.5);
 }
-.contributor-container > h3{
+.contributor-container > h2{
     text-decoration: none;
-    color: var(--white-color);
+    color: whitesmoke;
 }
-.contributor-container > h3:hover{
+.contributor-container > h2:hover{
     text-decoration: underline;
 }
 
 /*       The Landing sheet is styled here       */
+.promptTitle{
+    color: whitesmoke;
+}
 #landing{
     width: 100vw;
     height: 100vh;
-    background-color:blue;
+    background-color:rgb(255, 255, 255);
     background-image: url("https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111356.jpg?w=740");
     background-size: cover;
     background-attachment: fixed;
@@ -215,9 +308,16 @@ header{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+#landing{
+    background-image: url("https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111356.jpg?w=740");
+    animation: zoomIn-bg 1s ease-in-out;
 }
 #landing> h1 {
     color: whitesmoke;
+    animation: slideDown 3s ease-out;
 }
 #landing > h6{
     font-size: 0.7em;
@@ -225,6 +325,8 @@ header{
     padding: 20px;
     border-radius: 25px;
     transition: filter 0.3s ease;
+    position: absolute;
+    bottom: 0;
 }
 #landing > h6:hover{
     filter: blur(5px); /* Adjust the blur intensity as needed */
@@ -243,22 +345,23 @@ input{
     border:none;
     background-color:rgba(53, 53, 53, 0.6);
     color: whitesmoke;
+    animation: Opacitydown 3s ease-in-out;
 }
 
 button{
-    font-weight: 550;
+    font-weight: 450;
     border-radius: 5px;
-    width: 30vw;
-    height: 12vh;
+    width: 20vw;
+    height: 8vh;
     border-style: solid;
     border-radius: 20px;
     background-color: rgba(238, 86, 40, 0);
-    font-size: 2em;
+    font-size: 1em;
     cursor: pointer;
     border: solid;
     padding: 10px;
     color: rgb(255, 255, 255);
-    animation: in-animation 1s;
+    animation: Opacitydown 2s ease-in-out;
 }
 button:hover{
     background-color: rgb(255, 255, 255);
@@ -273,8 +376,8 @@ button:hover{
 }
 
 #about-sheet{
-    background-color: rgba(0, 0, 0, 1);
-    background-image: url("img/fetchpik.com-4NWVKH0J6S.jpg");
+    background-image: linear-gradient(to bottom,rgb(95, 19, 19),rgb(44, 16, 16));
+    /* background-image: url("img/fetchpik.com-4NWVKH0J6S.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -284,7 +387,7 @@ button:hover{
     text-align: center;
     justify-content: center;
     box-shadow: 0 0 800px rgba(190, 0, 0,0.5);
-    overflow-y: hidden;
+    overflow-y:visible;
 }
 .about-data{
     width: 120vh;
@@ -292,10 +395,13 @@ button:hover{
     border: solid;
     border-radius: 0px;
     border-color: whitesmoke;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 .about-data:hover{
     /* border: solid; */
-    border-radius: 45px;
+    border-radius: 8px;
     border-color: whitesmoke;
     box-shadow: 0px 0px 800px 0px rgba(136, 8, 8, 0.8);
 }
@@ -345,7 +451,7 @@ button:hover{
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: rgba(250, 250, 250, 0.1);
+    background-color: rgba(250, 250, 250, 0.05);
     border-radius: 50%;
     animation: moveElement 45s linear infinite alternate;
     filter: blur(5px);
@@ -354,7 +460,7 @@ button:hover{
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: rgba(250, 250, 250, 0.2);
+    background-color: rgba(250, 250, 250, 0.05);
     border-radius: 50%;
     animation: moveElement4 60s infinite alternate;
     filter: blur(5px);
@@ -363,7 +469,7 @@ button:hover{
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: rgba(250, 250, 250, 0.2);
+    background-color: rgba(250, 250, 250, 0.05);
     border-radius: 50%;
     animation: moveElement2 75s ease-in-out infinite alternate-reverse;
     filter: blur(5px);
@@ -372,7 +478,7 @@ button:hover{
     position: absolute;
     width: 70px;
     height: 70px;
-    background-color: rgba(250, 250, 250, 0.1);
+    background-color: rgba(250, 250, 250, 0.05);
     border-radius: 50%;
     animation: moveElement3 65s ease-in-out infinite alternate ;
     filter: blur(5px);
@@ -381,7 +487,7 @@ button:hover{
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: rgba(250, 250, 250, 0.1);
+    background-color: rgba(250, 250, 250, 0.05);
     animation: moverotateElement1 150s ease-in-out infinite alternate;
     filter: blur(5px);
 }
@@ -389,7 +495,7 @@ button:hover{
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: rgba(250, 250, 250, 0.1);
+    background-color: rgba(250, 250, 250, 0.05);
     animation: moverotateElement2 75s ease-in-out infinite alternate;
     filter: blur(5px);
 }
@@ -397,7 +503,7 @@ button:hover{
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: rgba(250, 250, 250, 0.1);
+    background-color: rgba(250, 250, 250, 0.05);
     border-radius: 50%;
     animation: moveElement-alt 55s ease-in-out infinite alternate;
     filter: blur(5px);
@@ -406,7 +512,7 @@ button:hover{
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: rgba(250, 250, 250, 0.2);
+    background-color: rgba(250, 250, 250, 0.05);
     border-radius: 50%;
     animation: moveElement4-alt 60s ease-in-out infinite alternate;
     filter: blur(5px);
@@ -415,7 +521,7 @@ button:hover{
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: rgba(250, 250, 250, 0.1);
+    background-color: rgba(250, 250, 250, 0.05);
     border-radius: 50%;
     animation: moveElement2-alt 70s ease-in-out infinite alternate-reverse;
     filter: blur(5px);
@@ -424,7 +530,7 @@ button:hover{
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: rgba(250, 250, 250, 0.1);
+    background-color: rgba(250, 250, 250, 0.05);
     border-radius: 50%;
     animation: moveElement3-alt 75s ease-in-out infinite alternate ;
     filter: blur(5px);
@@ -433,7 +539,7 @@ button:hover{
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: rgba(250, 250, 250, 0.1);
+    background-color: rgba(250, 250, 250, 0.05);
     animation: moverotateElement1-alt 100s ease-in-out infinite;
     filter: blur(5px);
 }
@@ -441,11 +547,65 @@ button:hover{
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: rgba(250, 250, 250, 0.1);
+    background-color: rgba(250, 250, 250, 0.05);
     animation: moverotateElement2-alt 80s ease-in-out infinite alternate;
     filter: blur(5px);
 }
 
+.geometric-element-circle-1:hover,.geometric-element-circle-2:hover,
+.geometric-element-circle-3:hover,.geometric-element-circle-4:hover,
+.geometric-element-circle-5:hover,.geometric-element-circle-6:hover,
+.geometric-element-circle-7:hover,.geometric-element-circle-8:hover,
+.geometric-element-square-1:hover,.geometric-element-square-2:hover,
+.geometric-element-square-3:hover,.geometric-element-square-4:hover{
+    filter: blur(25px);
+}
+/*--- dropdown box for contributors screenwidth < 425px  ----*/
+.dropbtn{
+    font-weight: 450;
+    padding: 0;
+    font-size: 1em;
+    width: 15vw;
+    height: 6vh;
+    border-radius: 10px;
+    margin-right: 10vw;
+}
+.dropdown {
+    display: none;
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    margin-left: -25vw;
+    border-radius: 8px;
+    background-color: #d6d6d6;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: flex; /* or block, depending on your layout needs */
+}
+.dropdown-content > ul > li {
+    list-style-type: none;
+}
+.links-container{
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+.links-container > li >a {
+    color: rgb(0, 0, 0);
+    padding: 8px 4px;
+    text-decoration: none;
+    display: block;
+    /* text-align: center; */
+}
+.dropdown-content a:hover {
+    background-color: #696969;
+}
 /* -------------------- Media Qyeries -------------------*/
 /* --------------------Small Laptop Screens---------------*/
 @media screen and (max-width:1024px){
@@ -496,18 +656,42 @@ button:hover{
     .caution-line{
         width: 50vw;
     }
+    .dropdown{
+        display: inline-block;
+    }
 }
 
 /* --------------------- Mobile devices ----------------------*/
-@media screen and (max-width:475px){
+@media screen and (max-width:425px){
+    header{
+        width: 100vw;
+        height: 8vh;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        padding: 15px;
+        background-color: rgba(255, 255, 255,0.5);
+        align-items: center;
+    }
+    #landing{
+        /* background-image: url("https://img.freepik.com/premium-photo/ai-artificial-intelligence-conceptconceptual-image-modern-technology-networking-concept_947762-5668.jpg?w=360"); */
+        background-image: url("https://1.bp.blogspot.com/-lyeT9ZcKtDc/YDulo-eArvI/AAAAAAAAgOg/zOiAbOH8hDsou_6OGip36M1sG9-EeKpkgCLcBGAsYHQ/s640-rw/v4-WIRE-MOBILE-HD.png");
+        background-size: cover;
+        background-repeat: no-repeat
+    }
+    #landing > h1{
+        font-size: 3em;
+    }
     input{
-        width: 60vw;
+        width: 80vw;
+        border: solid;
     }
     
     button{
+        margin-top: 2vh;
         font-weight: 400;
-        width: 60vw;
-        height: 10vh;
+        width: 80vw;
+        height: 6vh;
         font-size: 1.5em;
         padding: 0px;
         border-width: 1px;
@@ -515,6 +699,10 @@ button:hover{
     #landing > h6{
         font-size: 0.5em;
         padding: 8px;
+    }
+    #about-sheet{
+        background-image: linear-gradient(to top,rgb(75, 23, 35),rgb(49, 9, 18));
+        box-shadow: 30px 30px 100px 0 #000000
     }
     .about-data{
         width: 60vw;
@@ -529,11 +717,23 @@ button:hover{
         box-shadow: 0 0 800px rgba(190, 0, 0,0.5);
         overflow-y: hidden;
     }
-    .dropdown {
-        display: inline-block;
+    .dropdown{
+        margin-top: 4vh;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
     }
-} 
-
+    .dropdown-content {
+        margin-top: 1vh;
+        margin-left: -20vw;
+        border-width: 0px;
+    }
+    .dropbtn{
+        margin-top: 0;
+        color: black;
+        padding: 0px;
+    }
+}
 /*---------------- M-Mobile devices ---------------------*/
 @media screen and (max-width:375px){
     input{
@@ -547,45 +747,29 @@ button:hover{
         width: 70vw;
         height: 60vh
     }
-}
-/*  dropdowns hided till the tablet appear */
-@media screen and (min-width:765px){
-    .dropdown{
-        display: none;
+    #landing{
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 }
-/*--- dropdown box for contributors screenwidth < 425px  ----*/
-.dropbtn{
-    font-weight: 450;
-    padding: 0;
-    font-size: 1em;
-    width: 15vw;
-    height: 6vh;
-    border-radius: 10px;
-}
-.dropdown {
-    display: inline-block;
-    position: relative;
-}
-.dropdown-content {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-.dropdown-content > ul > li {
-    list-style-type: none;
-}
-.links > li >a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-.dropdown-content a:hover {
-    background-color: #ddd;
+/*---------------- M-Mobile devices ---------------------*/
+@media screen and (max-width:375px){
+    input{
+        width: 90vw;
+    }
+    
+    button{
+        margin-top: 2vh;
+        width: 70vw;
+        height: 7vh;
+    }
+    .about-data{
+        width: 70vw;
+        height: 60vh
+    }
 }
