@@ -11,7 +11,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
         <title>Aira</title>
-        <link rel="stylesheet" href="Aira_bot.css"> <!--- use this when using fastapi server:  {{ url_for('static', path='style.css') }} --->
+        <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}"> <!--- use this when using fastapi server:  {{ url_for('static', path='style.css') }} --->
     </head>
     <body>
         <header id="header">
