@@ -308,8 +308,6 @@ header{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    overflow-y:hidden;
-    overflow-x:hidden;
 }
 #landing{
     background-image: url("https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111356.jpg?w=740");
