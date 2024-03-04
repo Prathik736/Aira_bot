@@ -11,14 +11,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
         <title>Aira</title>
-        <link rel="stylesheet" href="Aira_bot.css"> <!--- use this when using fastapi server:  {{ url_for('static', path='style.css') }} --->
+        <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}"> <!--- use this when using fastapi server:  {{ url_for('static', path='style.css') }} --->
     </head>
     <body>
         <header id="header">
             <div class="logo-container">
                 <div class="logo">
                     <!---<img src="data:image/png;base64,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"/>--->
-                    <a href="# class="logo-img" title="logo"><img src="https://i.postimg.cc/G3KGmMyp/1280.png" alt="Stable Difussion" height="80" /></a>                    
+                    <a href="#" class="logo-img" title="logo"><img src="https://i.postimg.cc/G3KGmMyp/1280.png" alt="Stable Difussion" height="80" /></a>                    
                 </div>    
             </div>
             <div class="contributor-container disp-none-mobile">
@@ -67,18 +67,18 @@
             </form>
             <div id="generatedImageContainer"></div>
             <div class="light-leak"></div>
-            <div class="geometric-element-circle-1"></div>
-            <div class="geometric-element-circle-2"></div>
-            <div class="geometric-element-circle-3"></div>
-            <div class="geometric-element-circle-4"></div>
-            <div class="geometric-element-square-1"></div> 
-            <div class="geometric-element-square-2"></div> 
-            <div class="geometric-element-circle-5"></div>
-            <div class="geometric-element-circle-6"></div>
-            <div class="geometric-element-circle-7"></div>
-            <div class="geometric-element-circle-8"></div>
-            <div class="geometric-element-square-3"></div> 
-            <div class="geometric-element-square-4"></div> 
+            <div class="geometric-element-circle-1 disp-none-mobile"></div>
+            <div class="geometric-element-circle-2 disp-none-mobile"></div>
+            <div class="geometric-element-circle-3 disp-none-mobile"></div>
+            <div class="geometric-element-circle-4 disp-none-mobile"></div>
+            <div class="geometric-element-square-1 disp-none-mobile"></div> 
+            <div class="geometric-element-square-2 disp-none-mobile"></div> 
+            <div class="geometric-element-circle-5 disp-none-mobile"></div>
+            <div class="geometric-element-circle-6 disp-none-mobile"></div>
+            <div class="geometric-element-circle-7 disp-none-mobile"></div>
+            <div class="geometric-element-circle-8 disp-none-mobile"></div>
+            <div class="geometric-element-square-3 disp-none-mobile"></div> 
+            <div class="geometric-element-square-4 disp-none-mobile"></div> 
         </main>
         <!-- <main id="about-sheet">
             <div class="about-sheet-container">
