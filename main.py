@@ -1,20 +1,16 @@
-# main.py
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
-from authtoken import auth_token
 from diffusers import StableDiffusionPipeline
 from io import BytesIO
-from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
 import base64
 import torch
 
 app = FastAPI()
-auth_token = "Aira_bot"
+
 # Configure FastAPI to serve static files from the "static" directory
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", FastAPI.static("static"), name="static")
 
 app.add_middleware(
     CORSMiddleware,
@@ -26,9 +22,9 @@ app.add_middleware(
 
 templates = Jinja2Templates(directory="templates")
 
-device = "cpu"
+device = "cpu" 
 model_id = "C:/Users/scl/stable-diffusion-v1-5"
-pipe = StableDiffusionPipeline.from_pretrained(model_id, revision="fp32", torch_dtype=torch.float32, use_auth_token=auth_token)
+pipe = StableDiffusionPipeline.from_pretrained(model_id, revision="fp32", torch_dtype=torch.float32)
 pipe.to(device)
 
 @app.get("/", response_class=HTMLResponse)
@@ -38,10 +34,17 @@ async def read_item(request: Request):
 @app.post("/generate_image/")
 async def generate_image(prompt: str = Form(...)):
     with torch.no_grad():
-        image = pipe(prompt, guidance_scale=8.5).images[0]
+        images = pipe(prompt, guidance_scale=8.5).images
 
-    buffer = BytesIO()
-    image.save(buffer, format='PNG')
-    imgstr = base64.b64encode(buffer.getvalue())
-    
-    return {"image_data": imgstr.decode('utf-8')}
+    image_data = []
+    for image in images[:4]:
+        buffer = BytesIO()
+        image.save(buffer, format='PNG')
+        imgstr = base64.b64encode(buffer.getvalue()).decode('utf-8')
+        image_data.append({"image_data": imgstr})
+
+    return image_data
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
