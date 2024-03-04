@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from diffusers import StableDiffusionPipeline
+from fastapi.staticfiles import StaticFiles
 from io import BytesIO
 import base64
 import torch
@@ -10,7 +11,7 @@ import torch
 app = FastAPI()
 
 # Configure FastAPI to serve static files from the "static" directory
-app.mount("/static", FastAPI.static("static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.add_middleware(
     CORSMiddleware,
@@ -47,4 +48,4 @@ async def generate_image(prompt: str = Form(...)):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=8000)
