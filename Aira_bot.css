@@ -308,8 +308,6 @@ header{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    overflow-y:hidden;
-    overflow-x:hidden;
 }
 #landing{
     background-image: url("https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111356.jpg?w=740");
@@ -562,6 +560,7 @@ button:hover{
 }
 /*--- dropdown box for contributors screenwidth < 425px  ----*/
 .dropbtn{
+    color: whitesmoke;
     font-weight: 450;
     padding: 0;
     font-size: 1em;
@@ -670,7 +669,7 @@ button:hover{
         position: fixed;
         top: 0;
         padding: 15px;
-        background-color: rgba(255, 255, 255,0.5);
+        background-color: rgba(255, 255, 255,0);
         align-items: center;
     }
     #landing{
