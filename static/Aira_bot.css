@@ -233,6 +233,18 @@ body{
         transform: translate(0,0);
     }
 }
+
+.loading-indicator {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        color: #333;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
 /*          Top Header Elements are created here         */
 header{
     /* background-color:rgba(10, 59, 165, 0.1); */
