@@ -107,29 +107,14 @@
         </div> -->
         <!-- Geometric elements
         </main>--->
-<!----  Hemanth After This Line Everything you see is javascript  ----->
+<!---- After This Line Everything you see is javascript  ----->
         <script>
-         window.alert("The Webpage is currently Under development.It may take upto 12-15 minutes to generate images.")   
+    window.alert("The Webpage is currently Under development. It may take up to 12-15 minutes to generate images.");
 
-        async function generateImage() {
-            const prompt = document.getElementById("promptInput").value;
-            const response = await fetch('/generate_image/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `prompt=${encodeURIComponent(prompt)}`,
-            });
-            const data = await response.json();
+    async function generateImage() {
+        const prompt = document.getElementById("promptInput").value;
 
-            const img = document.createElement("img");
-            img.src = `data:image/png;base64,${data.image_data}`;
-            
-            const container = document.getElementById("generatedImageContainer");
-            container.innerHTML = "";
-            container.appendChild(img);
-
-            const loadingIndicator = document.getElementById("loadingIndicator");
+        const loadingIndicator = document.getElementById("loadingIndicator");
         loadingIndicator.innerText = "Loading...";
 
         const response = await fetch('/generate_image/', {
@@ -149,7 +134,7 @@
         const container = document.getElementById("generatedImageContainer");
         container.innerHTML = "";
         container.appendChild(img);
-        }
-    </script>
+    }
+        </script>
     </body>
 </html>
