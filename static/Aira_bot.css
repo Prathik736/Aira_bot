@@ -7,7 +7,6 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 /*          CSS variables                                     */
 :root{
@@ -235,13 +234,14 @@ body{
 
 /* Add this in your CSS file */
 .loader {
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid #3498db;
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #b30c0c;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    animation: spin 1s linear infinite;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s ease-in-out infinite;
     margin: 20% auto; /* Adjust the margin as needed */
+    display: none;
 }
 
 @keyframes spin {
@@ -315,7 +315,7 @@ header{
 }
 #landing{
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
     background-color:rgb(255, 255, 255);
     background-image: url("https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111356.jpg?w=740");
     background-size: cover;
@@ -401,7 +401,6 @@ button:hover{
     text-align: center;
     justify-content: center;
     box-shadow: 0 0 800px rgba(190, 0, 0,0.5);
-    overflow-y:visible;
 }
 .about-data{
     width: 120vh;
@@ -730,7 +729,6 @@ button:hover{
         text-align: left;
         justify-content: center;
         box-shadow: 0 0 800px rgba(190, 0, 0,0.5);
-        overflow-y: hidden;
     }
     .dropdown{
         margin-top: 4vh;
