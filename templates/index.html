@@ -65,7 +65,9 @@
                 <input type="text" id="promptInput" name="prompt_text_from_user" placeholder="Type your promt here...." required>
                 <button type="submit" onclick="generateImage()">Generate Image</button>
             </form>
-            <div id="generatedImageContainer"></div>
+            <div id="generatedImageContainer">
+                <div id="loadingSpinner" class="loader"></div>
+            </div>
 <!--             <div class="light-leak"></div>
             <div class="geometric-element-circle-1 disp-none-mobile"></div>
             <div class="geometric-element-circle-2 disp-none-mobile"></div>
@@ -109,32 +111,32 @@
         </main>--->
 <!---- After This Line Everything you see is javascript  ----->
         <script>
-    window.alert("The Webpage is currently Under development. It may take up to 12-15 minutes to generate images.");
+        async function generateImage() {
+    const prompt = document.getElementById("promptInput").value;
 
-    async function generateImage() {
-        const prompt = document.getElementById("promptInput").value;
+    // Show loading spinner
+    document.getElementById("loadingSpinner").style.display = "block";
 
-        const loadingIndicator = document.getElementById("loadingIndicator");
-        loadingIndicator.innerText = "Loading...";
+    const response = await fetch('/generate_image/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `prompt=${encodeURIComponent(prompt)}`,
+    });
 
-        const response = await fetch('/generate_image/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `prompt=${encodeURIComponent(prompt)}`,
-        });
-        const data = await response.json();
+    // Hide loading spinner
+    document.getElementById("loadingSpinner").style.display = "none";
 
-        loadingIndicator.innerText = ""; // Hide loading text
+    const data = await response.json();
 
-        const img = document.createElement("img");
-        img.src = `data:image/png;base64,${data.image_data}`;
+    const img = document.createElement("img");
+    img.src = `data:image/png;base64,${data.image_data}`;
 
-        const container = document.getElementById("generatedImageContainer");
-        container.innerHTML = "";
-        container.appendChild(img);
-    }
-        </script>
+    const container = document.getElementById("generatedImageContainer");
+    container.innerHTML = "";
+    container.appendChild(img);
+}
+    </script>
     </body>
 </html>
