@@ -10,7 +10,7 @@ import torch
 
 app = FastAPI()
 
-# Configure FastAPI to serve static files from the "static" directory
+# Configure FastAPI to serve static files from the "static" directory.,m,m
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.add_middleware(
