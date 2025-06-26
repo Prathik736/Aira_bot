@@ -233,17 +233,22 @@ body{
     }
 }
 
-.loading-indicator {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        color: #333;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-    }
+/* Add this in your CSS file */
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+    margin: 20% auto; /* Adjust the margin as needed */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /*          Top Header Elements are created here         */
 header{
     /* background-color:rgba(10, 59, 165, 0.1); */
